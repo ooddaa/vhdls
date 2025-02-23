@@ -14,8 +14,8 @@ architecture rtl of Debounce_Top is
  signal w_Debounced: std_logic; 
 
 begin
-  debounce_inst: entity work.debounce_filter
-    generic map(debounce_limit => 250000)
+  debounce_inst: entity work.Debounce_Filter
+    generic map(DEBOUNCE_LIMIT => 250000)
     port map (
       i_Clk       => i_Clk,
       i_Bouncy    => i_Switch,
@@ -28,6 +28,5 @@ begin
       i_Switch    => w_Debounced,
       o_LED       => o_LED
          );
-  
-  
+
 end architecture rtl;
